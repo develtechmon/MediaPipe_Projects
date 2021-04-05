@@ -12,7 +12,6 @@ while True:
     results = hands.process(imgRGB)
     print(results.multi_hand_landmarks)
 
-
     cv2.imshow("Results", image)
     if cv2.waitKey(1) & 0XFF == ord('q'):
         break
