@@ -54,7 +54,7 @@ def main():
 
         if len(lmList) != 0:
             print(lmList[4][1])
-            cv2.circle(img, (lmList[4][1], lmList[4][2]), 15, (255, 0, 255), cv2.FILLED)
+            cv2.circle(img, (lmList[0][1], lmList[4][2]), 15, (255, 0, 255), cv2.FILLED)
 
         cTime = time.time()
         fps = 1 / (cTime - pTime)
