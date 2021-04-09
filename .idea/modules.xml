@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../HandTracking_MediaPipe_Tutorial/.idea/HandTracking_MediaPipe_Tutorial.iml" filepath="$PROJECT_DIR$/../../HandTracking_MediaPipe_Tutorial/.idea/HandTracking_MediaPipe_Tutorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MediaPipe_Tutorial.iml" filepath="$PROJECT_DIR$/.idea/MediaPipe_Tutorial.iml" />
+    </modules>
+  </component>
+</project>
