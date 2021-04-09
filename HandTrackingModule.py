@@ -40,6 +40,7 @@ class handDetector():
                     #cv2.circle(img, (cx,cy), 15,(255,0,255),cv2.FILLED)
         return lmList
 
+
 def main():
     pTime = 0
     cTime = 0
