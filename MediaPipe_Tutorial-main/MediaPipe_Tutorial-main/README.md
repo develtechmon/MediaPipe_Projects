@@ -1,1 +1,0 @@
-"# MediaPipe_Tutorial" 
