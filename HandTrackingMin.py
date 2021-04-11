@@ -15,7 +15,7 @@ while True:
     imgRGB = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     results = hands.process(imgRGB)
 
-    #rint(results.multi_hand_landmarks)
+    #print(results.multi_hand_landmarks)
     if results.multi_hand_landmarks:
         for handLms in results.multi_hand_landmarks:
             for id, lm in enumerate (handLms.landmark):
@@ -31,7 +31,6 @@ while True:
     cTime = time.time()
     fps = 1/(cTime-pTime)
     pTime = cTime
-
 
     cv2.putText(image, str(int(fps)),(10,60), cv2.FONT_HERSHEY_PLAIN,3, (255,0,255),4)
 
