@@ -3,6 +3,8 @@ import mediapipe as mp
 import time
 
 cap = cv2.VideoCapture(0)
+cap.set(3,1920)
+cap.set(4,1440)
 
 mPose = mp.solutions.pose
 pose = mPose.Pose()
