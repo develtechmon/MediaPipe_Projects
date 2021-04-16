@@ -6,8 +6,6 @@ import time
 import time
 
 import numpy as np
-from future.utils import lmap
-
 
 class poseDetectorModule():
     def __init__(self, mode=False, upBody=False, smooth=True,
@@ -50,6 +48,7 @@ class poseDetectorModule():
 
         # Calculate the Angle
         angle = math.degrees(math.atan2(y3 - y2, x3 - x2) - math.atan2(y1 - y2, x1 - x2))
+
         #print(angle)
         # Use Acceleration Vector
         """u.v/ ||u||||v||"""
