@@ -2,10 +2,8 @@ import math
 
 import cv2
 import mediapipe as mp
-import time
-import time
-
 import numpy as np
+import time
 
 class poseDetectorModule():
     def __init__(self, mode=False, upBody=False, smooth=True,
@@ -46,23 +44,22 @@ class poseDetectorModule():
         x2, y2 = self.lmList[points[1]][1:]
         x3, y3 = self.lmList[points[2]][1:]
 
-        # Calculate the Angle
+        """Calculate the Angle - 2D dimension space with inverse tan trigonometry law."""
         angle = math.degrees(math.atan2(y3 - y2, x3 - x2) - math.atan2(y1 - y2, x1 - x2))
 
-        #print(angle)
-        # Use Acceleration Vector
+        """Use Acceleration Vector - 3D space dimension vectors"""
         """u.v/ ||u||||v||"""
-        # uv = (x1*x3) + (y1*y3)
-        # u = math.sqrt(pow(x1,2) + pow(y1,2))
-        # v = math.sqrt(pow(x3,2) + pow(y3,2))
+        uv = (x1*x3) + (y1*y3)
+        u = math.sqrt(pow(x1,2) + pow(y1,2))
+        v = math.sqrt(pow(x3,2) + pow(y3,2))
 
-        # vectorAngle = math.degrees(math.acos(uv/(u*v)))
+        vectorAngle = math.degrees(math.acos(uv/(u*v)))
         # print(vectorAngle)
 
         if angle < 0:
             angle += 360
 
-        if check == 1:
+        if check:
             angle = np.interp(angle, (180, 360), (180, 0))
 
         if angle >= 140:
@@ -114,6 +111,7 @@ def main():
                 angle = detector.findAngle(img, points,check=True)
                 per = np.interp(angle, (80, 155), (0, 100))
                 bar = np.interp(per, (0, 100), (400, 100))
+
             else:
                 angle = detector.findAngle(img, points,check=False)
                 per = np.interp(angle, (75, 135), (100, 0))
