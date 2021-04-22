@@ -6,7 +6,7 @@ from djitellopy import Tello
 
 class poseDetectionModule():
     def __init__(self, mode=False, upBody=False, smooth=True,
-                detectionCon=0.7, trackCon=0.7):
+                detectionCon=0.5, trackCon=0.5):
         self.mode = mode
         self.upBody = upBody
         self.smooth = smooth
@@ -30,12 +30,16 @@ class poseDetectionModule():
         myDrone.streamon()
         return myDrone
 
+    def drawLine(self,img,w,h):
+        cv2.line(img, (w // 2, 0), (w // 2, h), (0, 255, 0), 3)
+        cv2.line(img, (0, h//2), (w, h//2), (0, 255, 0), 3)
+        return img
+
     def findImage(self,cap, w, h):
         # success, img = cap.read()
         myFrame = cap.get_frame_read()
         myFrame = myFrame.frame
         img = cv2.resize(myFrame, (w, h))
-
         return img
 
     def findPose(self, img, draw=True):
@@ -50,20 +54,12 @@ class poseDetectionModule():
         self.lmList = []
         if self.results.pose_landmarks:
             for id, lm in enumerate(self.results.pose_landmarks.landmark):
-                if id:
-                    h,w,c = img.shape
-                    cx, cy = int(lm.x * w), int(lm.y * h)
-                    self.lmList.append([id, cx,cy, w, h])
-                    if draw:
-                        cv2.circle(img, (cx, cy), 8, (0, 0, 255), cv2.FILLED)
-
+                h,w,c = img.shape
+                cx, cy = int(lm.x * w), int(lm.y * h)
+                self.lmList.append([id, cx,cy, w, h])
+                if draw:
+                    cv2.circle(img, (cx, cy), 8, (0, 0, 255), cv2.FILLED)
         return self.lmList
-
-    def drawLine(self,img,w,h,draw=True):
-        cv2.line(img, (w // 2, 0), (w // 2, h), (0, 255, 0), 3)
-        cv2.line(img, (0, h//2), (w, h//2), (0, 255, 0), 3)
-
-        return img
 
     def findPID(self,img, lmList, pid, pError, detected, myDrone, draw=True):
         #print(lmList[0])
@@ -95,7 +91,6 @@ class poseDetectionModule():
                                         myDrone.for_back_velocity,
                                         myDrone.up_down_velocity,
                                         myDrone.yaw_velocity)
-
         return speedX
 
     def Scanning(self,detected, speed):
@@ -113,7 +108,6 @@ def main():
     cap = cv2.VideoCapture(0)
 
     detector = poseDetectionModule()
-    pTime = 0
     w,h = 640,480
     pid = [0.1, 0.1, 0]
     pError = 0
@@ -124,23 +118,24 @@ def main():
     #return detector,pTime,w,h,pid,pError,speed, startCounter
 
     """WebCam Return"""
-    return cap,detector,pTime,w,h,pid,pError,speed, startCounter
+    return cap,detector,w,h,pid,pError,speed, startCounter
 
 if __name__ == "__main__":
+
     """Tello WebCam"""
     #detector, pTime, w, h, pid, pError, speed, startCounter = main()
 
     """WebCam"""
-    cap,detector,pTime,w,h,pid,pError,speed, startCounter = main()
+    cap,detector,w,h,pid,pError,speed, startCounter = main()
 
     myDrone = detector.initialize()
 
     while True:
 
-        # if startCounter == 0:
-        #     myDrone.takeoff()
-        #     time.sleep(5)
-        # startCounter = 1
+        if startCounter == 0:
+            myDrone.takeoff()
+            time.sleep(5)
+        startCounter = 1
 
         success,img = cap.read()
 
@@ -154,7 +149,7 @@ if __name__ == "__main__":
         lmList = detector.findPosition(img)
 
         ## Step 3 - Draw Line
-        img = detector.drawLine(img, w,h)
+        img = detector.drawLine(img,w,h)
 
         ## Step 3 - Find PID speed
         if len(lmList) !=0:
@@ -168,10 +163,6 @@ if __name__ == "__main__":
             #                        myDrone.for_back_velocity,
             #                        myDrone.up_down_velocity,
             #                        myDrone.yaw_velocity)
-        ## Step 2 -
-        #cTime = time.time()
-        #fps = 1 / (cTime-pTime)
-        #spTime = cTime
 
         cv2.imshow("Result", img)
         if cv2.waitKey(1) & 0XFF == ord('q'):
