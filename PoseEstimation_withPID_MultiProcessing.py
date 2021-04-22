@@ -98,9 +98,9 @@ class poseDetectionModule():
                 speedForwardBackward = -30
 
             """Detect Nose, Left Arm, Right Arm, Shoulder and Track, Stop"""
-            if (lmList[16][2] < lmList[12][2]) & (lmList[15][2] < lmList[11][2]):
-                print("Stop")
-                myDrone.land()
+            #if (lmList[16][2] < lmList[12][2]) & (lmList[15][2] < lmList[11][2]):
+            #    print("Stop")
+            #    myDrone.land()
 
             posX_error = lmList[0][1] - lmList[0][3] // 2
             posY_error = lmList[0][2] - lmList[0][4] // 2
@@ -144,7 +144,7 @@ class poseDetectionModule():
 
 def main():
     """Webcam"""
-    cap = cv2.VideoCapture(0)
+    #cap = cv2.VideoCapture(0)
 
     detector = poseDetectionModule()
     w, h = 640, 480
@@ -154,18 +154,18 @@ def main():
     startCounter = 0
 
     """Tello Webcam Return"""
-    #return detector,w,h,pid,pError,speed, startCounter
+    return detector,w,h,pid,pError,speed, startCounter
 
     """WebCam Return"""
-    return cap, detector, w, h, pid, pError, speed, startCounter
+    #return cap, detector, w, h, pid, pError, speed, startCounter
 
 if __name__ == "__main__":
 
     """Tello WebCam"""
-    #detector,  w, h, pid, pError, speed, startCounter = main()
+    detector,  w, h, pid, pError, speed, startCounter = main()
 
     """WebCam"""
-    cap, detector, w, h, pid, pError, speed, startCounter = main()
+    #cap, detector, w, h, pid, pError, speed, startCounter = main()
 
     myDrone = detector.initialize()
     myDrone.takeoff()
@@ -176,10 +176,10 @@ if __name__ == "__main__":
         #    time.sleep(1)
         #startCounter = 1
 
-        success, img = cap.read()
+        #success, img = cap.read()
 
         ## Step 0 - Find Image from Tello WebCam
-        #img = detector.findImage(myDrone, w,h)
+        img = detector.findImage(myDrone, w,h)
 
         ## Step 1 -Detect Pose
         img = detector.findPose(img)
@@ -208,4 +208,3 @@ if __name__ == "__main__":
             myDrone.land()
             time.sleep(1)
             break
-cv2.destroyAllWindows()
