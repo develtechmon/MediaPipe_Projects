@@ -26,7 +26,7 @@ while True:
             cx, cy = int(lm.x * w), int(lm.y * h)
             #print(id,lm)
             lmList.append([id,cx,cy])
-            print(lmList)
+            print(lmList[0], w,h)
 
             cv2.circle(img, (cx,cy),5, (255,0,0), 4)
 

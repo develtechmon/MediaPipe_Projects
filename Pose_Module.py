@@ -1,13 +1,9 @@
 import math
-
 import cv2
 import mediapipe as mp
 import time
-import time
-
 import numpy as np
 from future.utils import lmap
-
 
 class poseDetectorModule():
     def __init__(self, mode=False, upBody=False, smooth=True,
