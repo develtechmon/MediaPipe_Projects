@@ -34,5 +34,6 @@ with mFace.FaceDetection(
 
         cv2.putText(image, str(int(fps)), (10,60), cv2.FONT_HERSHEY_PLAIN,3,(255,0,255),3)
         cv2.imshow("Image Detection", image)
+
         if cv2.waitKey(1) & 0XFF == ord('q'):
             break
