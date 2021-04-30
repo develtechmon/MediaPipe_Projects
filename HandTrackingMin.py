@@ -34,6 +34,7 @@ while True:
 
     cv2.putText(image, str(int(fps)),(10,60), cv2.FONT_HERSHEY_PLAIN,3, (255,0,255),4)
     cv2.imshow("Results", image)
+
     if cv2.waitKey(1) & 0XFF == ord('q'):
         break
 
