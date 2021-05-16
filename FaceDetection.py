@@ -2,7 +2,7 @@ import cv2
 import mediapipe as mp
 import time
 
-from future.utils import lmap
+#from future.utils import lmap
 
 cap = cv2.VideoCapture(0)
 
