@@ -64,7 +64,6 @@ class faceDetectionCustom():
         cv2.line(self.image, (x1, y1), (x1 - self.l, y1), (255, 0, 255), self.t)
         cv2.line(self.image, (x1, y1), (x1, y1 - self.l), (255, 0, 255), self.t)
 
-
 if __name__ == "__main__":
     face = faceDetectionCustom()
 
