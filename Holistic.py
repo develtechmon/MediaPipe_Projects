@@ -14,7 +14,7 @@ while True:
     results = holistic.process(imgRGB)
 
     #if results.face_landmarks:
-    #    print(results.face_landmarks.landmark)
+    #    print(results.face_landmarks.laI ndmark)
 
     mpDraw.draw_landmarks(img, results.face_landmarks, mpHolistic.FACE_CONNECTIONS)
     mpDraw.draw_landmarks(img, results.left_hand_landmarks, mpHolistic.HAND_CONNECTIONS)
