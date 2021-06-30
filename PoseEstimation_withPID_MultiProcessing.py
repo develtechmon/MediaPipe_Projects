@@ -15,8 +15,9 @@ class poseDetectionModule():
 
         self.mpDraw = mp.solutions.drawing_utils
         self.mpPose = mp.solutions.pose
-        self.pose = self.mpPose.Pose(self.mode, self.upBody, self.smooth, self.detectionCon, self.trackCon)
 
+        self.pose = self.mpPose.Pose(self.mode, self.upBody, self.smooth,
+                                     self.detectionCon, self.trackCon)
     def initialize(self):
         myDrone = Tello()
         myDrone.connect()
@@ -47,7 +48,8 @@ class poseDetectionModule():
         self.results = self.pose.process(imgRGB)
         if self.results.pose_landmarks:
             if draw:
-                self.mpDraw.draw_landmarks(img, self.results.pose_landmarks, self.mpPose.POSE_CONNECTIONS)
+                self.mpDraw.draw_landmarks(img, self.results.pose_landmarks,
+                                           self.mpPose.POSE_CONNECTIONS)
         return img
 
     def findPosition(self, img, draw=True):
@@ -71,14 +73,14 @@ class poseDetectionModule():
                 speedForwardBackward = 0
 
             # """Detect Nose, Right Arm, Shoulders and Track, Move Right"""
-            #if lmList[0][0] == 0:
+            # if lmList[0][0] == 0:
             if (lmList[16][2] < lmList[12][2]) & (lmList[15][2] > lmList[11][2]):
                 print("Right arm is up")
                 speedRightLeft = -30
                 speedForwardBackward = 0
 
             """Detect Nose, Left Arm, Shoulders and Track, Move Left"""
-            #if lmList[0][0] == 0:
+            # if lmList[0][0] == 0:
             if (lmList[15][2] < lmList[11][2]) & (lmList[16][2] > lmList[12][2]):
                 print("Left arm is up")
                 speedRightLeft = 30
@@ -97,7 +99,8 @@ class poseDetectionModule():
                 speedForwardBackward = -30
 
             """Detect Nose, Left Arm, Right Arm, Shoulder and Track, Stop"""
-            #if (lmList[16][2] < lmList[12][2]) & (lmList[15][2] < lmList[11][2]):
+
+            # if (lmList[16][2] < lmList[12][2]) & (lmList[15][2] < lmList[11][2]):
             #    print("Stop")
             #    myDrone.land()
 
@@ -112,7 +115,7 @@ class poseDetectionModule():
 
         if detected:
             if lmList[0][1] != 0 | lmList[0][2] != 0:
-                print(speedX,-speedY, speedRightLeft)
+                print(speedX, -speedY, speedRightLeft)
                 myDrone.yaw_velocity = speedX
                 myDrone.up_down_velocity = -speedY
                 myDrone.left_right_velocity = speedRightLeft
@@ -153,10 +156,10 @@ def main():
     startCounter = 0
 
     """Tello Webcam Return"""
-    return detector,w,h,pid,pError,speed, startCounter
+    return detector, w, h, pid, pError, speed, startCounter
 
     """WebCam Return"""
-    #return cap, detector, w, h, pid, pError, speed, startCounter
+    # return cap, detector, w, h, pid, pError, speed, startCounter
 
 if __name__ == "__main__":
 
@@ -170,26 +173,26 @@ if __name__ == "__main__":
     myDrone.takeoff()
     while True:
 
-        #if startCounter == 0:
+        # if startCounter == 0:
         #    myDrone.takeoff()
         #    time.sleep(1)
         #startCounter = 1
 
         #success, img = cap.read()
 
-        ## Step 0 - Find Image from Tello WebCam
-        img = detector.findImage(myDrone, w,h)
+        # Step 0 - Find Image from Tello WebCam
+        img = detector.findImage(myDrone, w, h)
 
-        ## Step 1 -Detect Pose
+        # Step 1 -Detect Pose
         img = detector.findPose(img)
 
-        ## Step 2 - Find Position
+        # Step 2 - Find Position
         lmList = detector.findPosition(img)
 
-        ## Step 3 - Draw Line
+        # Step 3 - Draw Line
         img = detector.drawLine(img, w, h)
 
-        ## Step 3 - Find PID speed
+        # Step 3 - Find PID speed
         if len(lmList) != 0:
             detected = True
             position = detector.findPID(img, lmList, pid, pError, detected, myDrone)
