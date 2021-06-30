@@ -12,7 +12,7 @@ cap.set(3,wCam)
 cap.set(4,hCam)
 pTime = 0
 
-folderPath = "FingerImage"
+folderPath = r"MediaPipe_Tutorial/FingerImage"
 myList = os.listdir(folderPath)
 overlayList = []
 
@@ -34,6 +34,7 @@ while True:
 
     if len(lmList) !=0:
         fingers = []
+        #print(lmList[tipIds[0]][1])
 
         if (lmList[tipIds[0]][1]) > lmList[tipIds[0]-1][1]:
             fingers.append(1)
@@ -45,9 +46,9 @@ while True:
                 fingers.append(1)
             else:
                 fingers.append(0)
-        #print(fingers)
+        print(fingers)
         totalFingers = fingers.count(1) # Counting 1
-        print(totalFingers)
+        #print(totalFingers)
 
         h,w,c = overlayList[totalFingers].shape
         img[0:h, 0:w] = overlayList[totalFingers]

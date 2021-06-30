@@ -39,18 +39,18 @@ class NoseHandTracking():
                     cv2.circle(img, (cx,cy), 8, (0,0,255),cv2.FILLED)
         
 if __name__ == "__main__":
-    detect = NoseHandTracking()
-    detector = htm.handDetector()
+    detectN = NoseHandTracking()
+    detectH = htm.handDetector()
 
     while True:
-        success, img = detect.cap.read()
+        success, img = detectN.cap.read()
 
         # Step 1 - Find Nose and Hand
-        Nose = detect.findImage(img)
-        Hand = detector.findHands(img)
+        Nose = detectN.findImage(img)
+        Hand = detectH.findHands(img)
 
         # Step 2 - Find Position
-        position = detect.findPosition(img)
+        position = detectN.findPosition(img)
 
         cv2.imshow("Results",img )
         if cv2.waitKey(1) & 0XFF == ord('q'):
