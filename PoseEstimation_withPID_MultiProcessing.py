@@ -4,7 +4,6 @@ import time
 import numpy as np
 from djitellopy import Tello
 
-
 class poseDetectionModule():
     def __init__(self, mode=False, upBody=False, smooth=True,
                  detectionCon=0.5, trackCon=0.5):
@@ -16,9 +15,9 @@ class poseDetectionModule():
 
         self.mpDraw = mp.solutions.drawing_utils
         self.mpPose = mp.solutions.pose
+
         self.pose = self.mpPose.Pose(self.mode, self.upBody, self.smooth,
                                      self.detectionCon, self.trackCon)
-
     def initialize(self):
         myDrone = Tello()
         myDrone.connect()
@@ -100,6 +99,7 @@ class poseDetectionModule():
                 speedForwardBackward = -30
 
             """Detect Nose, Left Arm, Right Arm, Shoulder and Track, Stop"""
+
             # if (lmList[16][2] < lmList[12][2]) & (lmList[15][2] < lmList[11][2]):
             #    print("Stop")
             #    myDrone.land()
@@ -160,7 +160,6 @@ def main():
 
     """WebCam Return"""
     # return cap, detector, w, h, pid, pError, speed, startCounter
-
 
 if __name__ == "__main__":
 
