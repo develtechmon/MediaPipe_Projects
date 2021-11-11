@@ -1,69 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9441e161-eb2b-4360-804d-29e7d16a18f3" name="Default Changelist" comment="+remove space on">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TelloDrone_Tutorial/Drone_Controlled_Whistle_Flask/Drone_Controlled_Whistle.py" beforeDir="false" afterPath="$PROJECT_DIR$/../TelloDrone_Tutorial/Drone_Controlled_Whistle_Flask/Drone_Controlled_Whistle.py" afterDir="false" />
+    <list default="true" id="8b1117ed-ead7-49e4-8412-36f6bad612b2" name="Default Changelist" comment="+added Nose Hand Tracking">
+      <change beforePath="$PROJECT_DIR$/../TelloDrone_Tutorial/FaceTracking_withPID.py" beforeDir="false" afterPath="$PROJECT_DIR$/../TelloDrone_Tutorial/FaceTracking_withPID.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/main" />
-  </component>
   <component name="Git.Settings">
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/main" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="ROOT_SYNC" value="SYNC" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../TelloDrone_Tutorial" />
   </component>
-  <component name="ProjectId" id="1rsyXt9KIHmHwUW1z3k758MEqPk" />
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="229742d6-6507-4898-9977-df8473229362" />
+  </component>
+  <component name="ProjectId" id="1ufuBnSNUHlUD4rWHPPHLBny3Br" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TelloDrone_Tutorial" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.FaceDetection">
-    <configuration name="Autonymous_CarRobot_PoseEstimation_withPID_Function" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MediaPipe_Tutorial" />
+  <component name="RunManager" selected="Python.FaceTracking_withPID">
+    <configuration name="FaceTracking_withPID" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TelloDrone_Tutorial" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../TelloDrone_Tutorial" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Autonymous_CarRobot_PoseEstimation_withPID_Function.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../TelloDrone_Tutorial/FaceTracking_withPID.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -72,20 +52,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Autonymous_CarRobot_PoseEstimation_withPID_Utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MediaPipe_Tutorial" />
+    <configuration name="KeyboardControl_Surveillance_Utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TelloDrone_Tutorial" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../TelloDrone_Tutorial" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Autonymous_CarRobot_PoseEstimation_withPID_Utils.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../TelloDrone_Tutorial/KeyboardControl_Surveillance_Utils.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -94,20 +73,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="FaceDetection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MediaPipe_Tutorial" />
+    <configuration name="NoseHand_Tracking_withPID" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TelloDrone_Tutorial" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../TelloDrone_Tutorial" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FaceDetection.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../TelloDrone_Tutorial/NoseHand_Tracking_withPID.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -116,20 +94,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Holistic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MediaPipe_Tutorial" />
+    <configuration name="Stream" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TelloDrone_Tutorial" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../TelloDrone_Tutorial" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Holistic.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../TelloDrone_Tutorial/Stream.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -138,20 +115,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="PoseEstimationMin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MediaPipe_Tutorial" />
+    <configuration name="Surveillance" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TelloDrone_Tutorial" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../TelloDrone_Tutorial" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PoseEstimationMin.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../TelloDrone_Tutorial/Surveillance.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -162,65 +138,32 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.FaceDetection" />
-        <item itemvalue="Python.Autonymous_CarRobot_PoseEstimation_withPID_Function" />
-        <item itemvalue="Python.Autonymous_CarRobot_PoseEstimation_withPID_Utils" />
-        <item itemvalue="Python.Holistic" />
-        <item itemvalue="Python.PoseEstimationMin" />
+        <item itemvalue="Python.FaceTracking_withPID" />
+        <item itemvalue="Python.Surveillance" />
+        <item itemvalue="Python.Stream" />
+        <item itemvalue="Python.KeyboardControl_Surveillance_Utils" />
+        <item itemvalue="Python.NoseHand_Tracking_withPID" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9441e161-eb2b-4360-804d-29e7d16a18f3" name="Default Changelist" comment="" />
-      <created>1619779135862</created>
+      <changelist id="8b1117ed-ead7-49e4-8412-36f6bad612b2" name="Default Changelist" comment="" />
+      <created>1625068833160</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1619779135862</updated>
-      <workItem from="1625999779154" duration="1000" />
-      <workItem from="1626016892838" duration="1220000" />
+      <updated>1625068833160</updated>
     </task>
-    <task id="LOCAL-00001" summary="+remove space">
-      <created>1619779214804</created>
+    <task id="LOCAL-00001" summary="+added Nose Hand Tracking">
+      <created>1625069627763</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1619779214805</updated>
+      <updated>1625069627764</updated>
     </task>
-    <task id="LOCAL-00002" summary="+remove space">
-      <created>1619779372509</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1619779372509</updated>
-    </task>
-    <task id="LOCAL-00003" summary="+remove space">
-      <created>1619779512213</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1619779512214</updated>
-    </task>
-    <task id="LOCAL-00004" summary="+remove space on djitello">
-      <created>1619779843259</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1619779843260</updated>
-    </task>
-    <task id="LOCAL-00005" summary="+remove space on">
-      <created>1619779951663</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1619779951663</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -232,12 +175,10 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+remove space" />
-    <MESSAGE value="+remove space on djitello" />
-    <MESSAGE value="+remove space on" />
-    <option name="LAST_COMMIT_MESSAGE" value="+remove space on" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="+added Nose Hand Tracking" />
+    <option name="LAST_COMMIT_MESSAGE" value="+added Nose Hand Tracking" />
   </component>
 </project>
