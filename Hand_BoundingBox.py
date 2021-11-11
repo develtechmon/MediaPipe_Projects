@@ -32,7 +32,7 @@ def webcamVideo():
         hands, img = detector.findAllHands(img)
 
         droneImg = me.get_frame_read().frame
-        droneImg = cv2.resize(droneImg, (360, 240))
+        droneImg = cv2.resize(droneImg, (480, 240))
         ## Draw Middle Line
         #cv2.line(img,(width//2,0),(width//2,height-24), (255,0,255),3)
         #cv2.line(img,(0,height//2),(width-24,height//2), (255,0,255),3)
@@ -105,11 +105,11 @@ def webcamVideo():
 
                         if (info[4] < 640) and (fingers1[1] == 1 & fingers2[1] == 1):
                             message = "Move Downward"
-                            ud = speed
+                            ud = -speed
 
                         if (info[4] > 640) and (fingers1[1] == 1 & fingers2[1] == 1):
                             message = "Move Upward"
-                            ud = -speed
+                            ud = speed
 
                     if (info[5] == 480):
                         message = "Stop"
