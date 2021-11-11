@@ -13,16 +13,6 @@ me.connect()
 print(me.get_battery())
 me.streamon()
 
-def droneVideo():
-    while True:
-        droneImg = me.get_frame_read().frame
-        droneImg = cv2.resize(droneImg,(360,240))
-        cv2.imshow("Output", droneImg)
-        if cv2.waitKey(1) & 0XFF == ord('q'):
-            me.land()
-            time.sleep(1)
-            break
-
 def webcamVideo():
     detector = handDetector(detectionCon=0.5, maxHands=2)
     startCounter = 0
