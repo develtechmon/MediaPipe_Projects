@@ -2,16 +2,15 @@ import cv2
 import time
 from HandTrackingModule import handDetector
 from djitellopy import tello
-from multiprocessing import Process
 
 cap = cv2.VideoCapture(0)
 cap.set(3,1920)
 cap.set(4,1440)
 
-me = tello.Tello()
-me.connect()
-print(me.get_battery())
-me.streamon()
+# me = tello.Tello()
+# me.connect()
+# print(me.get_battery())
+# me.streamon()
 
 def webcamVideo():
     detector = handDetector(detectionCon=0.5, maxHands=2)
@@ -21,8 +20,9 @@ def webcamVideo():
         height, width, centre = img.shape
         hands, img = detector.findAllHands(img)
 
-        droneImg = me.get_frame_read().frame
-        droneImg = cv2.resize(droneImg, (480, 240))
+        # droneImg = me.get_frame_read().frame
+        # droneImg = cv2.resize(droneImg, (640, 480))
+
         ## Draw Middle Line
         #cv2.line(img,(width//2,0),(width//2,height-24), (255,0,255),3)
         #cv2.line(img,(0,height//2),(width-24,height//2), (255,0,255),3)
@@ -40,7 +40,7 @@ def webcamVideo():
             handType1 = hand1["type"]
 
             fingers1 = detector.fingersUp(hand1)
-
+            
             if len(hands) == 2:
                 ## Dictionary index start at index 1 for Right
                 hand2 = hands[1]
@@ -55,16 +55,17 @@ def webcamVideo():
                 # Drone Take Off
                 if startCounter == 0:
                     if (fingers1[1] == 1 and fingers2[1] == 1):
-                        me.takeoff()
-                        message = "Drone TakeOff"
-                        time.sleep(1)
+                        #me.takeoff()
+                        #message = "Drone TakeOff"
+                        #time.sleep(1)
                         startCounter = 1
                     else:
                         message = "Waiting to Take Off"
+                cv2.putText(img,message, (width//2 - 100, 50),cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
 
                 if startCounter == 1:
                     lr, fb, ud, yv = 0,0,0,0
-                    speed = 50
+                    speed = 30
 
                     # Check if Right or Left in the Front
                     if (info[5] > 480):
@@ -78,11 +79,11 @@ def webcamVideo():
 
                         if (info[4] < 640) and (fingers1[1] == 1 & fingers2[1] == 1):
                             message = "Tilt Left"
-                            yv = -speed
+                            yv = -30
 
                         if (info[4] > 640) and (fingers1[1] == 1 & fingers2[1] == 1) :
                             message = "Tilt Right"
-                            yv = speed
+                            yv = 30
 
                     if (info[5] < 480):
                         if (info[4] < 640) and (fingers1[1] == 0 & fingers2[1] == 0):
@@ -103,16 +104,16 @@ def webcamVideo():
 
                     if (info[5] == 480):
                         message = "Stop"
-                        me.land()
+                        #me.land()
                         startCounter = 0
 
                     cv2.putText(img,message, (width//2 - 100, 50),cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
-                    me.send_rc_control(lr, fb, ud, yv)
+                    #me.send_rc_control(lr, fb, ud, yv)
 
-        cv2.imshow("Drone View", droneImg)
+        #cv2.imshow("Drone View", droneImg)
         cv2.imshow("Result",img)
         if cv2.waitKey(1) & 0XFF == ord('q'):
-            me.land()
+            #me.land()
             time.sleep(1)
             break
 
