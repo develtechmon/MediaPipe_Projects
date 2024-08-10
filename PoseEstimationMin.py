@@ -25,6 +25,7 @@ while True:
             h,w,c = img.shape
             cx, cy = int(lm.x * w), int(lm.y * h)
             #print(id,lm)
+            
             lmList.append([id,cx,cy])
             print(lmList[0], w,h)
 
