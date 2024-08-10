@@ -25,8 +25,7 @@ class poseDetector():
         self.results = self.pose.process(imgRGB)
         if self.results.pose_landmarks:
             if draw:
-                self.mpDraw.draw_landmarks(img, self.results.pose_landmarks,
-                                           self.mpPose.POSE_CONNECTIONS)
+                self.mpDraw.draw_landmarks(img, self.results.pose_landmarks, self.mpPose.POSE_CONNECTIONS)
         return img
 
     def findPosition(self, img, draw=True):
