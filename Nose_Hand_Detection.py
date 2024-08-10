@@ -13,8 +13,9 @@ class NoseHandTracking():
         self.trackCon = trackCon
         self.mpDraw = mp.solutions.drawing_utils
         self.mpPose = mp.solutions.pose
-        self.pose = self.mpPose.Pose(
-            self.mode, self.upBody, self.smooth, self.detectionCon, self.trackCon)
+        #self.pose = self.mpPose.Pose(self.mode, self.upBody, self.smooth, self.detectionCon, self.trackCon)
+        self.pose = self.mpPose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5)
+
 
     def findImage(self, img, draw=False):     
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -39,18 +40,18 @@ class NoseHandTracking():
                     cv2.circle(img, (cx,cy), 8, (0,0,255),cv2.FILLED)
         
 if __name__ == "__main__":
-    detectN = NoseHandTracking()
-    detectH = htm.handDetector()
+    detect = NoseHandTracking()
+    detector = htm.handDetector()
 
     while True:
-        success, img = detectN.cap.read()
+        success, img = detect.cap.read()
 
         # Step 1 - Find Nose and Hand
-        Nose = detectN.findImage(img)
-        Hand = detectH.findHands(img)
+        Nose = detect.findImage(img)
+        Hand = detector.findHands(img)
 
         # Step 2 - Find Position
-        position = detectN.findPosition(img)
+        position = detect.findPosition(img)
 
         cv2.imshow("Results",img )
         if cv2.waitKey(1) & 0XFF == ord('q'):
