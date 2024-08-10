@@ -14,8 +14,10 @@ class handDetector():
         self.tipIds = [4, 8, 12, 16, 20]
         self.mpHands = mp.solutions.hands
         self.mpDraw = mp.solutions.drawing_utils
-        self.hands = self.mpHands.Hands(self.mode, self.maxHands,
-                                        self.detectionCon, self.trackCon)
+        #self.hands = self.mpHands.Hands(self.mode, self.maxHands,self.detectionCon, self.trackCon)
+        
+        self.hands = self.mpHands.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5)
+
 
     def findHands(self, img, draw = True):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
