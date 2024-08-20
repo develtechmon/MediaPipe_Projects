@@ -127,7 +127,7 @@ class Pose_Keyboard_Control():
         elif self.command == "jump right":
             keyboard.press("k")
             keyboard.press("l")
-            print("Jump and Move Left !")
+            print("Jump and Move Right !")
             
         elif self.command == "jump left":
             keyboard.press("k")
